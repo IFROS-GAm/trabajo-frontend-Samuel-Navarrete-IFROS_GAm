@@ -37,8 +37,11 @@
                             <label for="materia">
                                 Materia
                             </label>
-                            <select class="form-control" id="materia">
-                                <option selected>Seleccionar</option>
+                            <select class="form-control" id="materia" (change)="capturarId($event)">
+                                <option selected></option>
+                                <option *ngFor="let item of listaMateriasSelect" [value]="item.idMateria"
+                                    >{{item.nombre}}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -53,7 +56,8 @@
                         </div>
                     </div>
                     <div class="col-md-auto mt-3">
-                        <button class="btn btn-primary px-md-3" id="" type="submit" title="Buscar">Buscar</button>
+                        <button class="btn btn-primary px-md-3" id="" (click)="findMateria()"
+                            title="Buscar">Buscar</button>
                     </div>
                     <div class="col-md-auto mt-3">
                         <a href="javascript:;" class="text-primary font-weight-bold"><u>Limpiar filtros</u></a>
@@ -63,7 +67,7 @@
         </form>
     </div>
 </div>
-<div class="card">
+<div class="card" *ngIf="listaMaterias.length > 0">
     <div class="card-body">
         <h5 class="mb-3 title">Resultados</h5>
         <table id="" class="table table-striped table-sm table-hover dataTable no-footer" role="grid">
@@ -71,41 +75,12 @@
                 <tr role="row">
                     <th>Código </th>
                     <th>Materia</th>
-                    <th>Profesor</th>
-                    <th>Grado</th>
-                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2022101</td>
-                    <td>Geografía</td>
-                    <td>Camila Fernández Rojas</td>
-                    <td>6,7,8,9,10,11</td>
-                    <td class="text-center">
-                        <button class="btn btn-outline-secondary mx-1" type="button" title="eye"><i class="fa fa-eye"></i></button>
-                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalMateria" type="button" title="trash"><i class="fa fa-trash"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2022101</td>
-                    <td>Geografía</td>
-                    <td>Camila Fernández Rojas</td>
-                    <td>6,7,8,9,10,11</td>
-                    <td class="text-center">
-                        <button class="btn btn-outline-secondary mx-1" type="button" title="eye"><i class="fa fa-eye"></i></button>
-                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalMateria" type="button" title="trash"><i class="fa fa-trash"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2022101</td>
-                    <td>Geografía</td>
-                    <td>Camila Fernández Rojas</td>
-                    <td>6,7,8,9,10,11</td>
-                    <td class="text-center">
-                        <button class="btn btn-outline-secondary mx-1" type="button" title="eye"><i class="fa fa-eye"></i></button>
-                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalMateria" type="button" title="trash"><i class="fa fa-trash"></i></button>
-                    </td>
+                <tr *ngFor="let item of listaMaterias">
+                    <td>{{item.idMateria}}</td>
+                    <td>{{item.nombre}}</td>
                 </tr>
             </tbody>
         </table>
@@ -125,7 +100,8 @@
                 ¿Estás seguro que deseas eliminar la materia?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button" title="no">No</button>
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button"
+                    title="no">No</button>
                 <button type="button" class="btn btn-primary">Sí, eliminar</button>
             </div>
         </div>

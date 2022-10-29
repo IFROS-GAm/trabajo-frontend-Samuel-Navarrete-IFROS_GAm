@@ -13,6 +13,8 @@ import { AdminEstudiantesComponent } from './components/admin-estudiantes/admin-
 import { NuevoEstudianteComponent } from './components/nuevo-estudiante/nuevo-estudiante.component';
 import { AdminMateriasComponent } from './components/admin-materias/admin-materias.component';
 import { MateriasComponent } from './components/materias/materias.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { MateriasComponent } from './components/materias/materias.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     APP_ROUTING
   ],
   providers: [],

@@ -19,11 +19,11 @@ export class MateriasService {
       );
   }
 
-  getMateriasById(idMateria: string) {
+  getMateriasById(idMateria: number) {
     return this.http
       .post<any>(
         'http://localhost:8081/servicesRest/WsColegio/getMateriasById',
-        JSON.stringify(idMateria)
+        idMateria
       )
       .pipe(
         map((materia) => {

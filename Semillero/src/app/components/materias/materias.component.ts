@@ -22,12 +22,16 @@ export class MateriasComponent implements OnInit {
     this.materiasService
       .getMaterias()
       .pipe(first())
-      .subscribe((data) => (this.listaMateriasSelect = data));
+      .subscribe((data) => {
+        this.listaMateriasSelect = data;
+        this.listaMaterias = data;
+      
+      });
   }
 
   findMateria(): void {
       this.materiasService
-        .getMateriasByIdJson(this.materiaSeleccionado)
+        .getMateriasById(this.materiaSeleccionado.idMateria)
         .pipe(first())
         .subscribe((data) => (this.listaMaterias = data));
   }

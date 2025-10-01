@@ -1,0 +1,111 @@
+<div class="col-md-12 mb-3">
+    <div class="row justify-content-between align-items-center">
+        <p class="mb-0 text-primary fs-18">Administración de informes</p>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/nuevoInforme']">
+            <i class="fa-solid fa-circle-plus pr-2"></i>
+            Nuevo informe
+        </button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body px-0">
+        <form id="informe">
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="tipo">
+                                Tipo de informe
+                            </label>
+                            <select class="form-control" id="tipo">
+                                <option selected></option>
+                                <option value="1">Calificaciones</option>
+                                <option value="2">Asistencia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="grado">
+                                Grado
+                            </label>
+                            <select class="form-control" id="grado">
+                                <option selected></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="periodo">
+                                Periodo
+                            </label>
+                            <select class="form-control" id="periodo">
+                                <option selected></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-auto mt-3">
+                        <button class="btn btn-primary px-md-3" id="" type="submit" title="Buscar">Buscar</button>
+                    </div>
+                    <div class="col-md-auto mt-3">
+                        <a href="javascript:;" class="text-primary font-weight-bold"><u>Limpiar filtros</u></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 title">Resultados</h5>
+        <table id="" class="table table-striped table-sm table-hover dataTable no-footer" role="grid">
+            <thead class="bg-thead text-light">
+                <tr role="row">
+                    <th>Código </th>
+                    <th>Tipo</th>
+                    <th>Grado</th>
+                    <th>Periodo</th>
+                    <th>Fecha generación</th>
+                    <th>Estado</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let informe of listaInformes">
+                    <td>{{informe.idInforme}}</td>
+                    <td>{{informe.tipo}}</td>
+                    <td>{{informe.grado}}</td>
+                    <td>{{informe.periodo}}</td>
+                    <td>{{informe.fechaGeneracion}}</td>
+                    <td>{{informe.estado}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-outline-secondary mx-1" type="button" title="eye"><i class="fa fa-eye"></i></button>
+                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalInforme" type="button" title="trash" (click)="seleccionarInforme(informe)"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalInforme" tabindex="-1" role="dialog" aria-labelledby="modalInforme" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalInforme">Eliminar </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" type="button" title="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro que deseas eliminar el informe?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button" title="no">No</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="eliminarInforme()">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="mb-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/adminEvaluaciones']">Administración de evaluaciones</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Evaluación</li>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Información de la evaluación</h5>
+        <form id="evaluacionForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Materia</label>
+                        <select class="form-control" id="materia">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Grado</label>
+                        <select class="form-control" id="grado">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Grupo</label>
+                        <select class="form-control" id="grupo">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Fecha de evaluación</label>
+                        <input class="form-control datepicker-range" type="text" name="fecha" placeholder="DD/MM/AAAA" id="fecha" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="3" placeholder="Ingrese una descripción"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row justify-content-end mb-4">
+    <div class="col-md-auto">
+        <a class="btn btn-outline-primary btn-block" type="button" title="Cancelar" [routerLink]="['/adminEvaluaciones']">Cancelar</a>
+    </div>
+    <div class="col-md-auto">
+        <button class="btn btn-primary btn-block" type="button" title="Guardar">Guardar</button>
+    </div>
+</div>

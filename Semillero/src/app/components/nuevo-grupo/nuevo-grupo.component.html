@@ -1,0 +1,50 @@
+<div class="mb-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/adminGrupos']">Administración de grupos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Grupo</li>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Información del grupo</h5>
+        <form id="grupoForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nombre del grupo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del grupo">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Grado</label>
+                        <select class="form-control" id="grado">
+                            <option selected>Seleccionar</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row justify-content-end mb-4">
+    <div class="col-md-auto">
+        <a class="btn btn-outline-primary btn-block" type="button" title="Cancelar" [routerLink]="['/adminGrupos']">Cancelar</a>
+    </div>
+    <div class="col-md-auto">
+        <button class="btn btn-primary btn-block" type="button" title="Guardar">Guardar</button>
+    </div>
+</div>

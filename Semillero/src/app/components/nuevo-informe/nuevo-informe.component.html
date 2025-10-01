@@ -1,0 +1,63 @@
+<div class="mb-2">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/adminInformes']">Administración de informes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Informe</li>
+        </ol>
+    </nav>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="mb-3 text-primary">Información del informe</h5>
+        <form id="informeForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Tipo de informe</label>
+                        <select class="form-control" id="tipo">
+                            <option selected>Seleccionar</option>
+                            <option value="1">Calificaciones</option>
+                            <option value="2">Asistencia</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Grado</label>
+                        <select class="form-control" id="grado">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Periodo</label>
+                        <select class="form-control" id="periodo">
+                            <option selected>Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Fecha de generación</label>
+                        <input class="form-control datepicker-range" type="text" name="fechaGeneracion" placeholder="DD/MM/AAAA" id="fechaGeneracion" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Comentarios</label>
+                        <textarea class="form-control" id="comentarios" rows="3" placeholder="Ingrese comentarios adicionales"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row justify-content-end mb-4">
+    <div class="col-md-auto">
+        <a class="btn btn-outline-primary btn-block" type="button" title="Cancelar" [routerLink]="['/adminInformes']">Cancelar</a>
+    </div>
+    <div class="col-md-auto">
+        <button class="btn btn-primary btn-block" type="button" title="Guardar">Guardar</button>
+    </div>
+</div>

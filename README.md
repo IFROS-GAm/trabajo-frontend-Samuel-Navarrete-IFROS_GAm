@@ -1,27 +1,49 @@
-# Semillero
+# Como dijieron mis profesores de Quipux "No reinventes la rueda"
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+# Semillero Frontend Por IFROS_GAm / Samuel Navarrete Ortiz
 
-## Development server
+Este proyecto es una aplicación frontend desarrollada en Angular para la gestión de estudiantes, grupos, evaluaciones e informes de manera eficiente como ficticia para una actividad de clase 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalación
 
-## Code scaffolding
+1. descarga el proyecto de Github como .ZIP o clonalo.
+2. Ve al directorio `Semillero`:
+   ```
+   cd Semillero
+   ```
+3. Instala las dependencias:
+   ```
+   npm install
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Ejecutar el servidor de desarrollo
 
-## Build
+Para iniciar el servidor de desarrollo, ejecuta:
+```
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+o
 
-## Running unit tests
+```
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La aplicación estará disponible en `http://localhost:4200/`.
 
-## Running end-to-end tests
+## Funcionalidades
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Administración de estudiantes
+- Administración de grupos
+- Administración de evaluaciones
+- Administración de informes 
+- Perfil basico
 
-## Further help
+- Cada una cuenta con "eliminacion" de datos de manera sencilla
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Estructura del proyecto
+
+- `src/app/components/`: Componentes de la aplicación
+- `src/app/_models/`: Modelos de datos
+- `src/app/_services/`: Servicios para la lógica
+

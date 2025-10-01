@@ -1,18 +1,30 @@
 <div class="col-md-12 mb-3">
     <div class="row justify-content-between align-items-center">
-        <p class="mb-0 text-primary fs-18">Administración de estudiantes</p>
-        <button type="button" class="btn btn-outline-primary" [routerLink]="['/nuevoEstudiante']">
+        <p class="mb-0 text-primary fs-18">Administración de informes</p>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/nuevoInforme']">
             <i class="fa-solid fa-circle-plus pr-2"></i>
-            Nuevo registro
+            Nuevo informe
         </button>
     </div>
 </div>
 <div class="card">
     <div class="card-body px-0">
-        <form id="estudiante">
+        <form id="informe">
             <div class="col-md-12">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="tipo">
+                                Tipo de informe
+                            </label>
+                            <select class="form-control" id="tipo">
+                                <option selected></option>
+                                <option value="1">Calificaciones</option>
+                                <option value="2">Asistencia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label for="grado">
                                 Grado
@@ -22,36 +34,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <div class="form-group">
-                            <label for="grupo">
-                                Grupo
+                            <label for="periodo">
+                                Periodo
                             </label>
-                            <select class="form-control" id="grado">
-                                <option selected></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Identificación</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <select class="form-control" id="tipoIdentificacion">
-                                        <option selected></option>
-                                        <option value="1">TI</option>
-                                    </select>
-                                </div>
-                                <input type="text" class="form-control" id="numero-documento" name="Número documento" placeholder="Número documento">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="grupo">
-                                Estudiante
-                            </label>
-                            <select class="form-control" id="estudiante">
+                            <select class="form-control" id="periodo">
                                 <option selected></option>
                             </select>
                         </div>
@@ -74,25 +62,25 @@
             <thead class="bg-thead text-light">
                 <tr role="row">
                     <th>Código </th>
-                    <th>Identificación</th>
-                    <th>Estudiante</th>
+                    <th>Tipo</th>
                     <th>Grado</th>
-                    <th>Grupo</th>
+                    <th>Periodo</th>
+                    <th>Fecha generación</th>
                     <th>Estado</th>
                     <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let estudiante of listaEstudiantes">
-                    <td>{{estudiante.codigo}}</td>
-                    <td>{{estudiante.identificacion}}</td>
-                    <td>{{estudiante.nombre}}</td>
-                    <td>{{estudiante.grado}}</td>
-                    <td>{{estudiante.grupo}}</td>
-                    <td>{{estudiante.estado}}</td>
+                <tr *ngFor="let informe of listaInformes">
+                    <td>{{informe.idInforme}}</td>
+                    <td>{{informe.tipo}}</td>
+                    <td>{{informe.grado}}</td>
+                    <td>{{informe.periodo}}</td>
+                    <td>{{informe.fechaGeneracion}}</td>
+                    <td>{{informe.estado}}</td>
                     <td class="text-center">
                         <button class="btn btn-outline-secondary mx-1" type="button" title="eye"><i class="fa fa-eye"></i></button>
-                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalEstudiante" type="button" title="trash" (click)="seleccionarEstudiante(estudiante)"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalInforme" type="button" title="trash" (click)="seleccionarInforme(informe)"><i class="fa fa-trash"></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -102,21 +90,21 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="modalEstudiante" tabindex="-1" role="dialog" aria-labelledby="modalEstudiante" aria-hidden="true">
+<div class="modal fade" id="modalInforme" tabindex="-1" role="dialog" aria-labelledby="modalInforme" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalEstudiante">Eliminar [nombre_estudiante]</h5>
+                <h5 class="modal-title" id="modalInforme">Eliminar </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" type="button" title="close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ¿Estás seguro que deseas eliminar el registro de estudiante?
+                ¿Estás seguro que deseas eliminar el informe?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button" title="no">No</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="eliminarEstudiante()">Sí, eliminar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="eliminarInforme()">Sí, eliminar</button>
             </div>
         </div>
     </div>

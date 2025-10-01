@@ -75,12 +75,17 @@
                 <tr role="row">
                     <th>Código </th>
                     <th>Materia</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of listaMaterias">
                     <td>{{item.idMateria}}</td>
                     <td>{{item.nombre}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-outline-secondary mx-1" type="button" title="editar"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-outline-secondary mx-1" data-toggle="modal" data-target="#modalMateria" type="button" title="trash" (click)="seleccionarMateria(item)"><i class="fa fa-trash"></i></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -91,7 +96,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalMateria">Eliminar [nombre_materia]</h5>
+                <h5 class="modal-title" id="modalMateria">Eliminar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" type="button" title="close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -102,7 +107,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal" type="button"
                     title="no">No</button>
-                <button type="button" class="btn btn-primary">Sí, eliminar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="eliminarMateria()">Sí, eliminar</button>
             </div>
         </div>
     </div>

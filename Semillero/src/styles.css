@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 :root {
     --primary: #59B3E4;
     --primary-dark: #316792;
@@ -9,19 +11,19 @@
     --black-150: #C8CCD0;
     --black-200: #898E92;
     --black-250: #757575;
-    --white-150: #555A5E;    
+    --white-150: #555A5E;
 }
 
 html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat';
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
     background-color: var(--bg-body);
 }
 
-/* botones */
+
 
 .hover-link{
     color: var(--white);
@@ -106,7 +108,7 @@ label, .title {
     font-size: 18px;
 }
 
-/* Menu */
+
 
 .menu {
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -128,7 +130,7 @@ li.link-menu a {
     padding: 1rem!important;
 }
 
-/* cards */
+
 
 .card {
     padding: 0 !important;
@@ -142,7 +144,7 @@ li.link-menu a {
     margin-bottom: 30px;
 }
 
-/* tabla */
+
 
 .bg-thead {
     background-color: var(--primary-dark);
@@ -158,7 +160,7 @@ li.link-menu a {
     color: var(--black-250);
 }
 
-/* Miga de pan */
+
 
 .breadcrumb{
     background-color: transparent;
